@@ -1,0 +1,965 @@
+[
+    {
+        "id": "f6f2187d.f17ca8",
+        "type": "tab",
+        "label": "Test - ARD ICON II",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "5f5732b1ea7fa640",
+        "type": "mqtt-broker",
+        "name": "Local Broker",
+        "broker": "192.168.42.30",
+        "port": 1883,
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "2b72e19c3835f9a5",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-custom",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Stavros Cyan",
+                "default": "#4B7930",
+                "baseColor": "#63daf8",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "reset": false
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#4B7930",
+                    "value": "#63daf8",
+                    "edited": true
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#2ca2c9",
+                    "edited": true
+                },
+                "page-backgroundColor": {
+                    "value": "#171717",
+                    "edited": true
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#454545",
+                    "edited": true
+                },
+                "group-textColor": {
+                    "value": "#68e4fd",
+                    "edited": true
+                },
+                "group-borderColor": {
+                    "value": "#828282",
+                    "edited": true
+                },
+                "group-backgroundColor": {
+                    "value": "#454545",
+                    "edited": true
+                },
+                "widget-textColor": {
+                    "value": "#fdfdfd",
+                    "edited": true
+                },
+                "widget-backgroundColor": {
+                    "value": "#44b3f8",
+                    "edited": true
+                },
+                "widget-borderColor": {
+                    "value": "#494949",
+                    "edited": true
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "c8d9f3b615bd7646",
+        "type": "ui_tab",
+        "name": "ARD ICON II",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "75f91c8b740d3c8d",
+        "type": "ui_group",
+        "name": "Αισθητήρες",
+        "tab": "c8d9f3b615bd7646",
+        "order": 1,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "41dfe3bcf1ec2ec5",
+        "type": "ui_group",
+        "name": "Συσκευή",
+        "tab": "c8d9f3b615bd7646",
+        "order": 2,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "8e4d162ec3322ae7",
+        "type": "ui_group",
+        "name": "Ώρα συστήματος",
+        "tab": "c8d9f3b615bd7646",
+        "order": 3,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "2372ceee21d9355e",
+        "type": "ui-base",
+        "name": "My Dashboard",
+        "path": "/dashboard",
+        "appIcon": "",
+        "includeClientData": true,
+        "acceptsClientConfig": [
+            "ui-notification",
+            "ui-control"
+        ],
+        "showPathInSidebar": false,
+        "headerContent": "page",
+        "navigationStyle": "default",
+        "titleBarStyle": "default",
+        "showReconnectNotification": true,
+        "notificationDisplayTime": 1,
+        "showDisconnectNotification": true,
+        "allowInstall": false
+    },
+    {
+        "id": "d46d30d947a8e7ef",
+        "type": "ui-theme",
+        "name": "Default Theme",
+        "colors": {
+            "surface": "#ffffff",
+            "primary": "#0094CE",
+            "bgPage": "#eeeeee",
+            "groupBg": "#ffffff",
+            "groupOutline": "#cccccc"
+        },
+        "sizes": {
+            "density": "default",
+            "pagePadding": "12px",
+            "groupGap": "12px",
+            "groupBorderRadius": "4px",
+            "widgetGap": "12px"
+        }
+    },
+    {
+        "id": "53b6a8bea97e0597",
+        "type": "ui-page",
+        "name": "ARD ICON II",
+        "ui": "2372ceee21d9355e",
+        "path": "/page1",
+        "icon": "home",
+        "layout": "grid",
+        "theme": "d46d30d947a8e7ef",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "order": 1,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "bcb014d0d1ce0128",
+        "type": "ui-group",
+        "name": "Ώρα",
+        "page": "53b6a8bea97e0597",
+        "width": 5,
+        "height": 1,
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "43cc42db70a44c6f",
+        "type": "mqtt in",
+        "z": "f6f2187d.f17ca8",
+        "name": "Data In",
+        "topic": "tele/place1/STATE",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "5f5732b1ea7fa640",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 70,
+        "y": 260,
+        "wires": [
+            [
+                "681faca710f11db1",
+                "a20f49150e2e8bdf"
+            ]
+        ]
+    },
+    {
+        "id": "681faca710f11db1",
+        "type": "split",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "splt": ";",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "property": "payload",
+        "x": 210,
+        "y": 260,
+        "wires": [
+            [
+                "e44510be1105d3be"
+            ]
+        ]
+    },
+    {
+        "id": "e44510be1105d3be",
+        "type": "switch",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "property": "parts.index",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "0",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "2",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "3",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 4,
+        "x": 350,
+        "y": 260,
+        "wires": [
+            [],
+            [
+                "8e242763fb73b11d"
+            ],
+            [
+                "e22bb38828374213"
+            ],
+            [
+                "17ae0a1d67a09519"
+            ]
+        ]
+    },
+    {
+        "id": "8e242763fb73b11d",
+        "type": "change",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "$number(msg.payload)",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 620,
+        "y": 240,
+        "wires": [
+            [
+                "6cede071f8036ee4"
+            ]
+        ]
+    },
+    {
+        "id": "e22bb38828374213",
+        "type": "change",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "$number(msg.payload)",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 620,
+        "y": 300,
+        "wires": [
+            [
+                "97f5f2764a9fc029"
+            ]
+        ]
+    },
+    {
+        "id": "0ed63cda8afddd66",
+        "type": "mqtt in",
+        "z": "f6f2187d.f17ca8",
+        "name": "stat",
+        "topic": "stat/place1/POWER1",
+        "qos": "2",
+        "datatype": "utf8",
+        "broker": "5f5732b1ea7fa640",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 70,
+        "y": 420,
+        "wires": [
+            [
+                "7b2cc88e089f05e1",
+                "ff309bd0bd564a1c"
+            ]
+        ]
+    },
+    {
+        "id": "7a8ad57238cc7302",
+        "type": "mqtt out",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "topic": "cmnd/place1/POWER1",
+        "qos": "",
+        "retain": "true",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "5f5732b1ea7fa640",
+        "x": 890,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "f1b24af34da7235e",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "function 1",
+        "func": "//Διάβασε μεταβλητή ορατή μόνο στο Flow.\n//Την 1η φορά δεν έχει οριστεί, θα πάρει τιμή 'OFF'\nlet cur_state = flow.get('POWER1_STATE') || \"OFF\";\nlet a = msg.payload; //Διάβασε μήνυμα από προηγούμενο κόμβο \nif (cur_state != a) //Αν υπάρχει αλλαγή κατάστασης\n   {\n    msg.payload = a; //Να προωθήσεις την νέα κατάσταση\n    //Αποθήκευσε την νέα κατάσταση για την επόμενη φορά\n    flow.set('POWER1_STATE', a);\n    return msg;\n   }",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 640,
+        "y": 360,
+        "wires": [
+            [
+                "7a8ad57238cc7302"
+            ]
+        ]
+    },
+    {
+        "id": "17ae0a1d67a09519",
+        "type": "split",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "splt": ":",
+        "spltType": "str",
+        "arraySplt": "1",
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "property": "payload",
+        "x": 310,
+        "y": 360,
+        "wires": [
+            [
+                "d1be46c5cb109259"
+            ]
+        ]
+    },
+    {
+        "id": "d1be46c5cb109259",
+        "type": "switch",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "property": "parts.index",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 490,
+        "y": 360,
+        "wires": [
+            [
+                "f1b24af34da7235e"
+            ]
+        ]
+    },
+    {
+        "id": "6593fac9359be451",
+        "type": "comment",
+        "z": "f6f2187d.f17ca8",
+        "name": "tele",
+        "info": "",
+        "x": 70,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "330fe96fb09e68d7",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "Υπολογισμός ώρας",
+        "func": "function addLZ(num, totalLength) {\n    return String(num).padStart(totalLength, '0');\n}\n\nvar d = new Date();\n\nvar min = d.getMinutes();\nvar hour = d.getHours();\n\nlet payload = addLZ(hour, 2) + \".\" + addLZ(min, 2);\nmsg.payload = payload;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 270,
+        "y": 640,
+        "wires": [
+            [
+                "66d55eb37824d4a2",
+                "8a8ebd2b65b37903",
+                "c532e5a0fa72ac01",
+                "8bb76a474d22e4af",
+                "ad9c8c3a31b6ae24"
+            ]
+        ]
+    },
+    {
+        "id": "acfa106720286d4e",
+        "type": "inject",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "30",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "true",
+        "payloadType": "bool",
+        "x": 90,
+        "y": 640,
+        "wires": [
+            [
+                "330fe96fb09e68d7"
+            ]
+        ]
+    },
+    {
+        "id": "66d55eb37824d4a2",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "Hours_dec",
+        "func": "let a = msg.payload;\nlet seven_seg = [0x3f, 6, 0x5b, 0x4f, 0x66, 0x6d, 0x7d, 7, 0x7f, 0x6f];\nlet dig = a[0];\nlet d = parseInt(dig, 10);\nmsg.payload = seven_seg[d]; \nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 510,
+        "y": 600,
+        "wires": [
+            [
+                "42a5439baebcae14"
+            ]
+        ]
+    },
+    {
+        "id": "8a8ebd2b65b37903",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "Hours_uni",
+        "func": "let a = msg.payload;\nlet seven_seg = [0x3f, 6, 0x5b, 0x4f, 0x66, 0x6d, 0x7d, 7, 0x7f, 0x6f];\nlet dig = a[1];\nlet d = parseInt(dig, 10);\nmsg.payload = seven_seg[d] | 0x80; //D.P. \nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 510,
+        "y": 640,
+        "wires": [
+            [
+                "8d881e6266698613"
+            ]
+        ]
+    },
+    {
+        "id": "c532e5a0fa72ac01",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "Mins_dec",
+        "func": "let a = msg.payload;\nlet seven_seg = [0x3f, 6, 0x5b, 0x4f, 0x66, 0x6d, 0x7d, 7, 0x7f, 0x6f];\nlet dig = a[3];\nlet d = parseInt(dig, 10);\nmsg.payload = seven_seg[d]; \nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 500,
+        "y": 680,
+        "wires": [
+            [
+                "d2916c65fa448469"
+            ]
+        ]
+    },
+    {
+        "id": "8bb76a474d22e4af",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "Mins_uni",
+        "func": "let a = msg.payload;\nlet seven_seg = [0x3f, 6, 0x5b, 0x4f, 0x66, 0x6d, 0x7d, 7, 0x7f, 0x6f];\nlet dig = a[4];\nlet d = parseInt(dig, 10);\nmsg.payload = seven_seg[d]; \nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 500,
+        "y": 720,
+        "wires": [
+            [
+                "5576bb99bcfa7737"
+            ]
+        ]
+    },
+    {
+        "id": "6cede071f8036ee4",
+        "type": "ui_gauge",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "group": "75f91c8b740d3c8d",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Θερμοκρασία",
+        "label": "℃",
+        "format": "{{value}}",
+        "min": "-10",
+        "max": "50",
+        "colors": [
+            "#3fe9e6",
+            "#1bf81f",
+            "#ca3838"
+        ],
+        "seg1": "10",
+        "seg2": "30",
+        "diff": false,
+        "className": "",
+        "x": 860,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "97f5f2764a9fc029",
+        "type": "ui_gauge",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "group": "75f91c8b740d3c8d",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "gtype": "wave",
+        "title": "Υγρασία",
+        "label": "%",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 880,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "ad9c8c3a31b6ae24",
+        "type": "ui_digital_display",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "group": "8e4d162ec3322ae7",
+        "order": 0,
+        "width": "6",
+        "height": "2",
+        "digits": "4",
+        "decimals": "2",
+        "x": 520,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "7b2cc88e089f05e1",
+        "type": "ui_switch",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "label": "Φώτα δωματίου",
+        "tooltip": "",
+        "group": "41dfe3bcf1ec2ec5",
+        "order": 1,
+        "width": "4",
+        "height": "1",
+        "passthru": false,
+        "decouple": "true",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "ON",
+        "onvalueType": "str",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "OFF",
+        "offvalueType": "str",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 340,
+        "y": 420,
+        "wires": [
+            [
+                "7a8ad57238cc7302"
+            ]
+        ]
+    },
+    {
+        "id": "77756342ee2c7aa8",
+        "type": "ui_widget_bulb_basic",
+        "z": "f6f2187d.f17ca8",
+        "group": "41dfe3bcf1ec2ec5",
+        "order": 2,
+        "width": "2",
+        "height": "3",
+        "name": "Light",
+        "title": " ",
+        "color": "#ffffff",
+        "scale": "small",
+        "x": 550,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "ff309bd0bd564a1c",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "function 7",
+        "func": "let a = false;\nif (msg.payload == \"ON\")\n    a = true;\nmsg.payload = a;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 480,
+        "wires": [
+            [
+                "77756342ee2c7aa8"
+            ]
+        ]
+    },
+    {
+        "id": "42a5439baebcae14",
+        "type": "ui-seven-segment-display",
+        "z": "f6f2187d.f17ca8",
+        "name": "Hours1",
+        "group": "bcb014d0d1ce0128",
+        "order": 1,
+        "value": "payload",
+        "valueType": "msg",
+        "width": 1,
+        "height": 0,
+        "x": 740,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "8d881e6266698613",
+        "type": "ui-seven-segment-display",
+        "z": "f6f2187d.f17ca8",
+        "name": "Hours2",
+        "group": "bcb014d0d1ce0128",
+        "order": 2,
+        "value": "payload",
+        "valueType": "msg",
+        "width": 1,
+        "height": 0,
+        "x": 740,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "d2916c65fa448469",
+        "type": "ui-seven-segment-display",
+        "z": "f6f2187d.f17ca8",
+        "name": "Minutes1",
+        "group": "bcb014d0d1ce0128",
+        "order": 3,
+        "value": "payload",
+        "valueType": "msg",
+        "width": 1,
+        "height": 0,
+        "x": 740,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "5576bb99bcfa7737",
+        "type": "ui-seven-segment-display",
+        "z": "f6f2187d.f17ca8",
+        "name": "Minutes2",
+        "group": "bcb014d0d1ce0128",
+        "order": 4,
+        "value": "payload",
+        "valueType": "msg",
+        "width": 1,
+        "height": 0,
+        "x": 740,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "55578992ef34bcbc",
+        "type": "comment",
+        "z": "f6f2187d.f17ca8",
+        "name": "Dashboard 2",
+        "info": "",
+        "x": 890,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "9e330e6a1992143b",
+        "type": "comment",
+        "z": "f6f2187d.f17ca8",
+        "name": "Dashboard 1",
+        "info": "",
+        "x": 690,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "586947de7e3f1ace",
+        "type": "comment",
+        "z": "f6f2187d.f17ca8",
+        "name": "Dashboard 1",
+        "info": "",
+        "x": 870,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "a20f49150e2e8bdf",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "function 2",
+        "func": "function addLZ(num, totalLength) {\n    return String(num).padStart(totalLength, '0');\n}\n\nvar d = new Date();\nvar n = d.getTimezoneOffset();\nvar t = d.getTime();\nvar sec = d.getSeconds();\nvar min = d.getMinutes();\nvar hour = d.getHours();\nvar date = d.getDate();\nvar month = d.getMonth() + 1;\nvar year = d.getFullYear();\nlet payload = addLZ(date, 2) + \"/\" + addLZ(month, 2) +\n    \"/\" + year + \"-\" + addLZ(hour, 2) + \":\" + addLZ(min, 2) +\n    \":\" + addLZ(sec, 2);\nmsg.payload = payload;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 220,
+        "y": 140,
+        "wires": [
+            [
+                "804f03d032c54a56"
+            ]
+        ]
+    },
+    {
+        "id": "804f03d032c54a56",
+        "type": "ui_template",
+        "z": "f6f2187d.f17ca8",
+        "group": "75f91c8b740d3c8d",
+        "name": "Τελευταία ενημέρωση",
+        "order": 1,
+        "width": "6",
+        "height": "2",
+        "format": "Τελευταία ενημέρωση:\n<div style=\"padding: 10px\">\n    <span class=\"box\">{{msg.payload}}</span>\n</div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 500,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "06d5223e7b06949c",
+        "type": "ui_template",
+        "z": "f6f2187d.f17ca8",
+        "group": "75f91c8b740d3c8d",
+        "name": "CSS",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "format": "<style>\n    .box {\n        float: left;\n        padding: 2px;\n        width: 200px;\n        height: 25px;\n        line-height: 25px;\n        text-align: center;\n        margin: 5px 5px 5px 5px;\n        color: green;\n        background-color: lightblue;\n        border-radius: 5px;\n    }\n\n    .box1 {\n        float: left;\n        padding: 3px;\n        width: 100px;\n        height: 25px;\n        line-height: 25px;\n        text-align: center;\n        margin: 5px 5px 5px 5px;\n        color: green;\n        background-color: rgb(245, 250, 187);\n        border-radius: 5px;\n    }\n</style>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 450,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "89eb11aafa8016ae",
+        "type": "global-config",
+        "env": [],
+        "modules": {
+            "node-red-dashboard": "3.6.6",
+            "@flowfuse/node-red-dashboard": "1.30.2",
+            "node-red-contrib-ui-digital-display": "1.0.3",
+            "@studiobox/node-red-contrib-ui-widget-bulb-basic": "0.4.0",
+            "@yoshoku/node-red-dashboard-2-ui-seven-segment-display": "0.2.0"
+        }
+    }
+]

@@ -1,0 +1,567 @@
+[
+    {
+        "id": "f6f2187d.f17ca8",
+        "type": "tab",
+        "label": "Test - ARD ICON II",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "43cc42db70a44c6f",
+        "type": "mqtt in",
+        "z": "f6f2187d.f17ca8",
+        "name": "Data In",
+        "topic": "tele/place1/STATE",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "5f5732b1ea7fa640",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 70,
+        "y": 260,
+        "wires": [
+            [
+                "681faca710f11db1"
+            ]
+        ]
+    },
+    {
+        "id": "681faca710f11db1",
+        "type": "split",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "splt": ";",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "property": "payload",
+        "x": 210,
+        "y": 260,
+        "wires": [
+            [
+                "e44510be1105d3be"
+            ]
+        ]
+    },
+    {
+        "id": "e44510be1105d3be",
+        "type": "switch",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "property": "parts.index",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "0",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "2",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "3",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 4,
+        "x": 350,
+        "y": 260,
+        "wires": [
+            [],
+            [
+                "8e242763fb73b11d"
+            ],
+            [
+                "e22bb38828374213"
+            ],
+            [
+                "17ae0a1d67a09519"
+            ]
+        ]
+    },
+    {
+        "id": "8e242763fb73b11d",
+        "type": "change",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "$number(msg.payload)",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 520,
+        "y": 240,
+        "wires": [
+            [
+                "0a8a6919dd1f21cd"
+            ]
+        ]
+    },
+    {
+        "id": "e22bb38828374213",
+        "type": "change",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "$number(msg.payload)",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 520,
+        "y": 300,
+        "wires": [
+            [
+                "1074657536ef529c"
+            ]
+        ]
+    },
+    {
+        "id": "0a8a6919dd1f21cd",
+        "type": "ui-gauge",
+        "z": "f6f2187d.f17ca8",
+        "name": "Temp",
+        "group": "68b99a9b99865e87",
+        "order": 1,
+        "value": "payload",
+        "valueType": "msg",
+        "width": 2,
+        "height": 3,
+        "gtype": "gauge-half",
+        "gstyle": "needle",
+        "title": "Θερμοκρασία",
+        "alwaysShowTitle": false,
+        "floatingTitlePosition": "top-left",
+        "units": "℃",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "-10",
+                "color": "#12d5fd",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "10",
+                "color": "#52fb23",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "20",
+                "color": "#d7f835",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "30",
+                "color": "#fdbd0d",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "40",
+                "color": "#ea5353",
+                "text": "",
+                "textType": "label"
+            }
+        ],
+        "min": "-10",
+        "max": "50",
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 690,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1074657536ef529c",
+        "type": "ui-gauge",
+        "z": "f6f2187d.f17ca8",
+        "name": "Humidity",
+        "group": "68b99a9b99865e87",
+        "order": 2,
+        "value": "payload",
+        "valueType": "msg",
+        "width": 1,
+        "height": 3,
+        "gtype": "gauge-tank",
+        "gstyle": "needle",
+        "title": "Υγρασία",
+        "alwaysShowTitle": false,
+        "floatingTitlePosition": "top-left",
+        "units": "units",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#a8f5ff",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "15",
+                "color": "#55dbec",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "35",
+                "color": "#53b4fd",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "50",
+                "color": "#2397d1",
+                "text": "",
+                "textType": "label"
+            }
+        ],
+        "min": 0,
+        "max": "100",
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 700,
+        "y": 300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "0d93e33f49c456f8",
+        "type": "ui-switch",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "label": "Φώτα δωματίου",
+        "group": "fa89ccedee675d81",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "decouple": true,
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "className": "",
+        "layout": "row-spread",
+        "clickableArea": "switch",
+        "onvalue": "ON",
+        "onvalueType": "str",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "OFF",
+        "offvalueType": "str",
+        "officon": "",
+        "offcolor": "",
+        "x": 340,
+        "y": 420,
+        "wires": [
+            [
+                "7a8ad57238cc7302"
+            ]
+        ]
+    },
+    {
+        "id": "0ed63cda8afddd66",
+        "type": "mqtt in",
+        "z": "f6f2187d.f17ca8",
+        "name": "stat",
+        "topic": "stat/place1/POWER1",
+        "qos": "2",
+        "datatype": "utf8",
+        "broker": "5f5732b1ea7fa640",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 70,
+        "y": 420,
+        "wires": [
+            [
+                "0d93e33f49c456f8"
+            ]
+        ]
+    },
+    {
+        "id": "7a8ad57238cc7302",
+        "type": "mqtt out",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "topic": "cmnd/place1/POWER1",
+        "qos": "",
+        "retain": "true",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "5f5732b1ea7fa640",
+        "x": 650,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "f1b24af34da7235e",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "function 1",
+        "func": "//Διάβασε μεταβλητή ορατή μόνο στο Flow.\n//Την 1η φορά δεν έχει οριστεί, θα πάρει τιμή 'OFF'\nlet cur_state = flow.get('POWER1_STATE') || \"OFF\";\nlet a = msg.payload; //Διάβασε μήνυμα από προηγούμενο κόμβο \nif (cur_state != a) //Αν υπάρχει αλλαγή κατάστασης\n   {\n    msg.payload = a; //Να προωθήσεις την νέα κατάσταση\n    //Αποθήκευσε την νέα κατάσταση για την επόμενη φορά\n    flow.set('POWER1_STATE', a);\n    return msg;\n   }",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 500,
+        "y": 360,
+        "wires": [
+            [
+                "7a8ad57238cc7302"
+            ]
+        ]
+    },
+    {
+        "id": "17ae0a1d67a09519",
+        "type": "split",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "splt": ":",
+        "spltType": "str",
+        "arraySplt": "1",
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "property": "payload",
+        "x": 210,
+        "y": 360,
+        "wires": [
+            [
+                "d1be46c5cb109259"
+            ]
+        ]
+    },
+    {
+        "id": "d1be46c5cb109259",
+        "type": "switch",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "property": "parts.index",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 350,
+        "y": 360,
+        "wires": [
+            [
+                "f1b24af34da7235e"
+            ]
+        ]
+    },
+    {
+        "id": "6593fac9359be451",
+        "type": "comment",
+        "z": "f6f2187d.f17ca8",
+        "name": "tele",
+        "info": "",
+        "x": 70,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "5f5732b1ea7fa640",
+        "type": "mqtt-broker",
+        "name": "Local Broker",
+        "broker": "192.168.42.30",
+        "port": 1883,
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "68b99a9b99865e87",
+        "type": "ui-group",
+        "name": "Αισθητήρες",
+        "page": "9aa5d3c92415811c",
+        "width": "4",
+        "height": 1,
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "fa89ccedee675d81",
+        "type": "ui-group",
+        "name": "Συσκευή",
+        "page": "9aa5d3c92415811c",
+        "width": "3",
+        "height": 1,
+        "order": 2,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "9aa5d3c92415811c",
+        "type": "ui-page",
+        "name": "Δοκιμή IOT ARD ICON II",
+        "ui": "809cd9640c00716b",
+        "path": "/page1",
+        "icon": "home",
+        "layout": "grid",
+        "theme": "4a9082b0e2967f39",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "order": 1,
+        "className": "",
+        "visible": true,
+        "disabled": false
+    },
+    {
+        "id": "809cd9640c00716b",
+        "type": "ui-base",
+        "name": "My Dashboard",
+        "path": "/dashboard",
+        "appIcon": "",
+        "includeClientData": true,
+        "acceptsClientConfig": [
+            "ui-notification",
+            "ui-control"
+        ],
+        "showPathInSidebar": false,
+        "headerContent": "page",
+        "navigationStyle": "default",
+        "titleBarStyle": "default",
+        "showReconnectNotification": true,
+        "notificationDisplayTime": 1,
+        "showDisconnectNotification": true,
+        "allowInstall": false
+    },
+    {
+        "id": "4a9082b0e2967f39",
+        "type": "ui-theme",
+        "name": "Default Theme",
+        "colors": {
+            "surface": "#ffffff",
+            "primary": "#0094CE",
+            "bgPage": "#eeeeee",
+            "groupBg": "#ffffff",
+            "groupOutline": "#cccccc"
+        },
+        "sizes": {
+            "density": "default",
+            "pagePadding": "12px",
+            "groupGap": "12px",
+            "groupBorderRadius": "4px",
+            "widgetGap": "12px"
+        }
+    },
+    {
+        "id": "a3d38bedfc641389",
+        "type": "global-config",
+        "env": [],
+        "modules": {
+            "@flowfuse/node-red-dashboard": "1.30.2"
+        }
+    }
+]
